@@ -454,7 +454,7 @@ class CPU extends Player {
         let jump = abs(leftOrRight) < this.radius*2 && ball.x > W*0.7 && ball.y < ground - this.radius*2;
         if (this.isRed) {
             leftOrRight = (W-ball.x) - (W-this.x) + this.radius*1.5;
-            retreat = (ball.vx < 6 && (W-this.x) < 0.1*W) || ball.x > 0.6*W;
+            retreat = (ball.vx < -6 && this.x > 0.1*W) || ball.x > 0.6*W;
             jump = abs(leftOrRight) < this.radius*2 && ball.x < W*0.3 && ball.y < ground - this.radius*2;
         }
         if (retreat) {
