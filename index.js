@@ -243,8 +243,8 @@ class Ball {
     }
     collide(a, b) {
         let VX = 0, VY = 0, hit = false;
-        const dist_a = dist(this.x, this.y, a.x, a.y);
-        const dist_b = dist(this.x, this.y, b.x, b.y);
+        let dist_a = dist(this.x, this.y, a.x, a.y);
+        let dist_b = dist(this.x, this.y, b.x, b.y);
         if (dist_a <= 1) {
             dist_a = 1;
         }
