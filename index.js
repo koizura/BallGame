@@ -27,6 +27,7 @@ function draw() {
     background(255);
     
     playerInput(playerL);
+    playerR.think(ball);
     playerL.update();
     playerR.update();
     ball.update();
@@ -40,7 +41,7 @@ function draw() {
     playerR.show();
     ball.show();
     if (frameCount%120 == 0) {
-        playerR.up();
+        //playerR.up();
     }
 
     strokeWeight(0);
@@ -89,7 +90,7 @@ class Ball {
         ellipse(this.x, this.y, this.radius*2, this.radius*2);
     }
     update() {
-        if (this.inGoal != 0) return;
+        //if (this.inGoal != 0) return;
         this.vx *= 0.99999;
         this.vy += this.gravity;
         this.y += this.vy;
@@ -246,25 +247,18 @@ class CPU extends Player {
         return new CPU(this.brain);
     }
     think(ball) {
-        let inputs = [];
-        inputs[0] = map(this.x, 0, W, 0, 1);
-        inputs[1] = map(this.y, 0, ground, 0, 1);
-        inputs[2] = map(ball.x, 0, W, 0, 1);
-        inputs[3] = map(ball.y, 0, ground, 0, 1);
-        inputs[4] = map(ball.vx, -25, 25, 0, 1);
-        inputs[5] = map(ball.vy, -25, 25, 0, 1);
-        let action = this.brain.predict(inputs);
-        let chosen = action.indexOf(max(...action));
-        if (chosen == 1) {
-            this.left();
-        } else if (chosen == 2) {
+        this.juggler(ball);
+    }
+    juggler(ball) {
+        let leftOrRight = ball.x - this.x + this.radius*2; //  
+        if (leftOrRight > 5) {
             this.right();
-        } else if (chosen == 3) {
-            this.up();
-        } else {
-            // do nothing
+        } 
+        if (leftOrRight < -5) {
+            this.left();
         }
     }
+
 }
 
 
