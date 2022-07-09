@@ -18,7 +18,31 @@
   </header>
   <main>
     <div class="world" id="world">
+      <div class="menu">
+        <h1 id="title">BALL GAME</h1>
+        <div id="player-selection">
+          <select id="left-type">
+            <option value="player">Player 1</option>
+            <option value="juggler">Juggler AI</option>
+            <option value="jumper">Jumper AI</option>
+            <option value="master">Master AI</option>
+          </select>
+          <button id="start-btn">Start Game</button>
+          <button id="home-btn">Home</button>
+          <select id="right-type">
+            <option value="player">Player 2</option>
+            <option value="juggler">Juggler AI</option>
+            <option value="jumper">Jumper AI</option>
+            <option value="master">Master AI</option>
+          </select>
+        </div>
+        
+      </div>
+      
     </div>
+    <div id="credits">
+      <p>Game AI Demo | Ball Game | <a href="https://koizura.me" target="blank">koizura.me</a></p>
+      </div>
     <script src="index.js"></script>
   </main>
 </body>

@@ -49,16 +49,45 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('assets/BebasNeue.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
-
-
+#title {
+    color:white;
+    font-size: 8rem;
+    font-family: BebasNeue, Tahoma, serif;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    top:25%;
+    bottom:75%;
+}
+.menu {
+    padding: 0;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width:1000px;
+    height:600px;
+    z-index:2;
+}
 
 #world {
-background: linear-gradient(#7F5A83, #0D324D);
-position:absolute;
-width:100%;
-height:100%;
-overflow:hidden;
+    background: linear-gradient(#7F5A83, #0D324D);
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
 }
 .p5Canvas {
     padding: 0;
@@ -70,31 +99,86 @@ overflow:hidden;
     left: 0;
     right: 0;
 }
+select {
+    background-color:rgb(137, 137, 137);
+    color:white;
+    font-size: 15px;
+    width:200px;
+    height:50px;
+    margin: 0 auto;
+    border: none;
+    padding: 5px;
+    display:flex;
+    text-decoration: none;
+    font-family:'Open Sans', sans-serif;
+    text-align: center;
+}
+select:hover {
+    background-color:rgb(120, 120, 120);
+}
+#player-selection {
+    width:800px;
+    height:130px;
+    bottom:0;
+    display:flex;
+    margin-left: 100px;
+    margin-right: 100px;
+    position:absolute;
+    font-family:'Open Sans', sans-serif;
+}
+#start-btn {
+    width:200px;
+    height:50px;
+    font-size: 15px;
+    border: none;
+    background-color: #47cd6b;
+    font-family:'Open Sans', sans-serif;
+    color: white;
+}
+#home-btn {
+    width:200px;
+    height:50px;
+    font-size: 15px;
+    border: none;
+    background-color: #5252ff;
+    font-family:'Open Sans', sans-serif;
+    color: white;
+    position:absolute;
+    left:300px;
+    right:300px;
+    display:none;
+}
+#home-btn:hover {
+    background-color: #4545de;
+}
+#start-btn:hover {
+    background-color: #369c51;
+}
 #instructions{
-position:absolute;
-width:100%;
-top:50%;
-margin: auto;
-margin-top:200px;
-font-family:'Open Sans', sans-serif;
-color:#71b583;
-font-size:1.2em;
-text-transform: uppercase;
-text-align : center;
+    position:absolute;
+    width:100%;
+    top:50%;
+    margin: auto;
+    margin-top:200px;
+    font-family:'Open Sans', sans-serif;
+    color:#71b583;
+    font-size:1.2em;
+    text-transform: uppercase;
+    text-align : center;
 }
 
 #credits{
-position:absolute;
-width:100%;
-margin: auto;
-bottom:0;
-margin-bottom:20px;
-font-family:'Open Sans', sans-serif;
-color:#71b583;
-font-size:0.7em;
-text-transform: uppercase;
-text-align : center;
+    position:absolute;
+    width:100%;
+    margin: auto;
+    bottom:0;
+    margin-bottom:20px;
+    font-family:'Open Sans', sans-serif;
+    color:#71b583;
+    font-size:0.7em;
+    text-transform: uppercase;
+    text-align : center;
 }
 #credits a {
-color:#71b583;
+    color:#71b583;
 }
